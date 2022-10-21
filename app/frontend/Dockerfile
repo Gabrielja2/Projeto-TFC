@@ -2,9 +2,6 @@ FROM node:16.14-alpine
 
 WORKDIR /app-frontend
 
-
-ADD . .
-
 COPY . .
 
 RUN ["npm", "install"]
