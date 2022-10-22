@@ -4,7 +4,7 @@ import db from '.';
 class User extends Model {
   id!: number;
   email!: string;
-  name!: string;
+  username!: string;
   password!: string;
   role!: string;
 }
@@ -20,7 +20,7 @@ User.init({
     type: STRING,
     allowNull: false,
   },
-  name: {
+  username: {
     type: STRING,
     allowNull: false,
   },

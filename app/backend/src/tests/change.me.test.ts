@@ -2,44 +2,56 @@ import * as sinon from 'sinon';
 import * as chai from 'chai';
 // @ts-ignore
 import chaiHttp = require('chai-http');
-
 import { app } from '../app';
-import Example from '../database/models/ExampleModel';
-
+import User from '../database/models/User';
 import { Response } from 'superagent';
+import { userMock, wrongMock, correctMock, noEmailMock, noPasswordMock } from './mocks/userMock';
 
 chai.use(chaiHttp);
-
 const { expect } = chai;
 
-describe('Seu teste', () => {
-  /**
-   * Exemplo do uso de stubs com tipos
-   */
+describe('Testando a rota de Login', () => {
+  beforeEach(sinon.restore);
 
-  // let chaiHttpResponse: Response;
+  test('Verifica se retorna um token em caso de sucesso no login', async() => {
+    sinon.stub(User, 'findOne').resolves(userMock as User);
 
-  // before(async () => {
-  //   sinon
-  //     .stub(Example, "findOne")
-  //     .resolves({
-  //       ...<Seu mock>
-  //     } as Example);
-  // });
+    const response = await chai.request(app).post('/login').send(correctMock)
 
-  // after(()=>{
-  //   (Example.findOne as sinon.SinonStub).restore();
-  // })
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.have.property('token');
+  })
 
-  // it('...', async () => {
-  //   chaiHttpResponse = await chai
-  //      .request(app)
-  //      ...
+  test('Verifica se retorna a mensagem correta caso o email ou password estejam incorretos', async () => {
+    sinon.stub(User, 'findOne').resolves(userMock as User);
 
-  //   expect(...)
-  // });
 
-  it('Seu sub-teste', () => {
-    expect(false).to.be.eq(true);
+    const response = await chai
+      .request(app)
+      .post('/login')
+      .send(wrongMock);
+
+    expect(response.status).to.be.equal(401);
+    expect(response.body).to.be.deep.equal('Incorrect email or password');
+  });
+
+  test('Verifica se retorna a mensagem correta caso o email não exista no banco de dados', async () => {
+    const response = await chai
+      .request(app)
+      .post('/login')
+      .send(noEmailMock);
+
+    expect(response.status).to.be.equal(400);
+    expect(response.body).to.be.deep.equal('Incorrect email or password');
+  });
+
+  test('Verifica se retorna a mensagem correta caso o password não exista no banco de dados', async () => {
+    const response = await chai
+      .request(app)
+      .post('/login')
+      .send(noPasswordMock);
+
+    expect(response.status).to.be.equal(400);
+    expect(response.body).to.be.deep.equal('Incorrect email or password');
   });
 });
