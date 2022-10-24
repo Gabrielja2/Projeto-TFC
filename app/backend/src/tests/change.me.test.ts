@@ -42,7 +42,7 @@ describe('Testando a rota de Login', () => {
       .send(noEmailMock);
 
     expect(response.status).to.be.equal(400);
-    expect(response.body).to.be.deep.equal('Incorrect email or password');
+    expect(response.body).to.be.deep.equal('All fields must be filled');
   });
 
   test('Verifica se retorna a mensagem correta caso não tenha o campo o password', async () => {
@@ -52,6 +52,6 @@ describe('Testando a rota de Login', () => {
       .send(noPasswordMock);
 
     expect(response.status).to.be.equal(400);
-    expect(response.body).to.be.deep.equal('Incorrect email or password');
+    expect(response.body).to.be.deep.equal('All fields must be filled');
   });
 });
