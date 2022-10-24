@@ -9,10 +9,8 @@ export default class UserController {
   }
 
   public login = async (req: Request, res: Response) => {
-    console.log('req', req);
-    console.log('res', res);
     const token = await this._service.login(req.body);
-    console.log('aki', token);
+
     res.status(200).json({ token });
   };
 }
