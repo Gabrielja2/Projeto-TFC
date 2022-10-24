@@ -8,8 +8,8 @@ export default class UserService {
 
   public login = async ({ email }: ILogin): Promise<string> => {
     const user = await UserModel.findOne(({ where: { email } }));
-
-    if (!user) throw new CustomError(401, 'Username or password invalid');
+    console.log('user', user);
+    if (!user) throw new CustomError(401, 'Incorrect email or password');
 
     const token = await generateToken(user);
     return token;
