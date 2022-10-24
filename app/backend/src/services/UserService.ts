@@ -1,17 +1,23 @@
+import { IUser } from '../interfaces/user';
 import CustomError from '../helpers/customError';
-import generateToken from '../helpers/tokenGenerate';
 import { ILogin } from '../interfaces/login';
 import UserModel from '../database/models/User';
+import { decodeToken } from '../helpers/tokenGenerate';
 
 export default class UserService {
   private model: UserModel;
 
-  public login = async ({ email }: ILogin): Promise<string> => {
+  public login = async ({ email }: ILogin): Promise<IUser> => {
     const user = await UserModel.findOne(({ where: { email } }));
-    console.log('user', user);
-    if (!user) throw new CustomError(401, 'Incorrect email or password');
 
-    const token = await generateToken(user);
-    return token;
+    if (user === null) throw new CustomError(401, 'Incorrect email or password');
+
+    return user;
+  };
+
+  public getRole = async (token : string) => {
+    const { payload } = decodeToken(token);
+
+    return payload.role;
   };
 }

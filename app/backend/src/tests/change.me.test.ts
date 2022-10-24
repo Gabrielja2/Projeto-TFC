@@ -35,7 +35,7 @@ describe('Testando a rota de Login', () => {
     expect(response.body).to.be.deep.equal('Incorrect email or password');
   });
 
-  test('Verifica se retorna a mensagem correta caso o email não exista no banco de dados', async () => {
+  test('Verifica se retorna a mensagem correta caso não tenha o campo email ', async () => {
     const response = await chai
       .request(app)
       .post('/login')
@@ -45,7 +45,7 @@ describe('Testando a rota de Login', () => {
     expect(response.body).to.be.deep.equal('Incorrect email or password');
   });
 
-  test('Verifica se retorna a mensagem correta caso o password não exista no banco de dados', async () => {
+  test('Verifica se retorna a mensagem correta caso não tenha o campo o password', async () => {
     const response = await chai
       .request(app)
       .post('/login')
