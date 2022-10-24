@@ -1,4 +1,6 @@
 import * as express from 'express';
+import router from './routers';
+import errorHandler from './middlewares/middlewareError';
 
 class App {
   public app: express.Express;
@@ -22,6 +24,9 @@ class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
+    this.app.use('/login', router.login);
+
+    this.app.use(errorHandler);
   }
 
   public start(PORT: string | number):void {
