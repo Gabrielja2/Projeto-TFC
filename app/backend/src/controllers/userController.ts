@@ -13,7 +13,7 @@ export default class UserController {
 
   public login = async (req: Request, res: Response) => {
     const user = await this._service.login(req.body);
-    console.log('maisumavez', user);
+
     const validatePassword = await bcrypt.compare(req.body.password, user.password);
     if (!validatePassword) throw new CustomError(401, 'Incorrect email or password');
 
