@@ -1,8 +1,9 @@
-import login from './login';
-import getTeams from './teams';
-
-export default { login };
+import loginRouter from './login';
+import teamsRouter from './teams';
+import matchesRouter from './matches';
 
 export {
-  getTeams,
+  loginRouter,
+  teamsRouter,
+  matchesRouter,
 };
