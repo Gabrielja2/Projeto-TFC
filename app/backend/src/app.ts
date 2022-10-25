@@ -1,6 +1,6 @@
 import * as express from 'express';
 import 'express-async-errors';
-import router from './routers';
+import router, { getTeams } from './routers';
 import errorHandler from './middlewares/middlewareError';
 
 class App {
@@ -12,6 +12,7 @@ class App {
     this.config();
 
     this.app.use('/login', router.login);
+    this.app.use('/teams', getTeams);
 
     this.app.use(errorHandler);
 
