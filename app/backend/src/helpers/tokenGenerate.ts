@@ -5,13 +5,11 @@ import { IUser } from '../interfaces/user';
 dotenv.config();
 
 const generateToken = async (payload: IUser) => {
-  const KEY_SECRET = process.env.JWT_SECRET || 'jwt_secret';
-
   const jwtconfig = {
     expiresIn: '15d',
   };
 
-  const token = sign({ payload }, KEY_SECRET, jwtconfig);
+  const token = sign({ payload }, 'jwt_secret', jwtconfig);
 
   return token;
 };

@@ -1,4 +1,4 @@
-import { Model, INTEGER, STRING } from 'sequelize';
+import { Model, INTEGER } from 'sequelize';
 import db from '.';
 
 class Matche extends Model {

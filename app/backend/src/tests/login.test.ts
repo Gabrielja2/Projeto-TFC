@@ -7,6 +7,7 @@ import User from '../database/models/User';
 import { Response } from 'superagent';
 import { correctMock, noEmailMock, noPasswordMock, token, userMock, wrongEmailMock, wrongPasswordMock } from './mocks/userMock';
 import generateToken, { decodeToken } from '../helpers/tokenGenerate';
+const jwt = require('jsonwebtoken');
 
 chai.use(chaiHttp);
 const { expect } = chai;
@@ -15,9 +16,9 @@ describe('Testando a rota de Login', () => {
   beforeEach(sinon.restore);
 
   it('Verifica se retorna um token em caso de sucesso no login', async() => {
-    const tk = await generateToken(userMock)    
+    const token = await generateToken(userMock)    
+    const decoded = decodeToken(token)
     const response = await chai.request(app).post('/login').send(correctMock)
-    const decoded = decodeToken(tk)
 
     expect(response.status).to.be.equal(200);
     expect(userMock).to.be.deep.equal(decoded.payload);
@@ -51,6 +52,20 @@ describe('Testando a rota de Login', () => {
 
     expect(response.status).to.be.equal(400);
     expect(response.body).to.be.deep.equal({ message: 'All fields must be filled'});
-  });  
+  });
+
+  it('Verifica se retorna a role correta para cada usuario que realizar o login', async () => {
+    const token = await generateToken(userMock)    
+    const decoded = decodeToken(token)
+    sinon.stub(jwt, 'verify').returns(decoded);
+
+    const response = await chai
+      .request(app)
+      .get('/login/validate')
+      .send(decoded);
+
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.be.deep.equal({ "role": 'user'});
+  });
 
 });
