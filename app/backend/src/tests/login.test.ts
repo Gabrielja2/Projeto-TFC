@@ -5,14 +5,14 @@ import chaiHttp = require('chai-http');
 import { app } from '../app';
 import User from '../database/models/User';
 import { Response } from 'superagent';
-import { correctMock, noEmailMock, noPasswordMock, token, userMock, wrongEmailMock, wrongPasswordMock } from './mocks/userMock';
+import { correctMock, noEmailMock, userMock, wrongEmailMock, wrongPasswordMock } from './mocks/userMock';
 import generateToken, { decodeToken } from '../helpers/tokenGenerate';
 const jwt = require('jsonwebtoken');
 
 chai.use(chaiHttp);
 const { expect } = chai;
 
-describe('Testando a rota de Login', () => {
+describe('Testando a rota /login', () => {
   beforeEach(sinon.restore);
 
   it('Verifica se retorna um token em caso de sucesso no login', async() => {
