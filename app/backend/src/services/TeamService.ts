@@ -4,14 +4,14 @@ export default class TeamService {
   private model: TeamModel;
 
   public getTeams = async () => {
-    const users = await TeamModel.findAll();
+    const teams = await TeamModel.findAll();
 
-    return users;
+    return teams;
   };
 
   public getTeam = async (id : string) => {
-    const [user] = await TeamModel.findAll({ where: { id } });
+    const [team] = await TeamModel.findAll({ where: { id } });
 
-    return user;
+    return team;
   };
 }
