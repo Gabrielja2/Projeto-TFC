@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import matchMiddleware from '../middlewares/middlewareMatch';
 import MatchService from '../services/MatchService';
 import MatchController from '../controllers/MatchController';
 
@@ -8,7 +9,7 @@ const matchService = new MatchService();
 const matchController = new MatchController(matchService);
 
 matchesRouter.get('/', matchController.getMatches);
-matchesRouter.post('/', matchController.createMatch);
+matchesRouter.post('/', matchMiddleware, matchController.createMatch);
 matchesRouter.patch('/:id/finish', matchController.updateMatch);
 
 export default matchesRouter;
