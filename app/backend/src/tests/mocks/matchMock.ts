@@ -5,7 +5,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 8,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "São Paulo"
 		},
@@ -19,7 +19,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 14,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Internacional"
 		},
@@ -33,7 +33,7 @@ export const matches = [
 		"homeTeamGoals": 3,
 		"awayTeam": 11,
 		"awayTeamGoals": 0,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Corinthians"
 		},
@@ -47,7 +47,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 2,
 		"awayTeamGoals": 0,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Botafogo"
 		},
@@ -61,7 +61,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 10,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Flamengo"
 		},
@@ -75,7 +75,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 13,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Cruzeiro"
 		},
@@ -89,7 +89,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 6,
 		"awayTeamGoals": 2,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Palmeiras"
 		},
@@ -103,7 +103,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 1,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "São José-SP"
 		},
@@ -117,7 +117,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 12,
 		"awayTeamGoals": 3,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Avaí/Kindermann"
 		},
@@ -131,7 +131,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 9,
 		"awayTeamGoals": 2,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Bahia"
 		},
@@ -145,7 +145,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 3,
 		"awayTeamGoals": 0,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Real Brasília"
 		},
@@ -159,7 +159,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 4,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Ferroviária"
 		},
@@ -173,7 +173,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 5,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Grêmio"
 		},
@@ -187,7 +187,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 16,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Santos"
 		},
@@ -201,7 +201,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 15,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Minas Brasília"
 		},
@@ -215,7 +215,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 7,
 		"awayTeamGoals": 0,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Napoli-SC"
 		},
@@ -229,7 +229,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 8,
 		"awayTeamGoals": 3,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Avaí/Kindermann"
 		},
@@ -243,7 +243,7 @@ export const matches = [
 		"homeTeamGoals": 4,
 		"awayTeam": 5,
 		"awayTeamGoals": 2,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Palmeiras"
 		},
@@ -257,7 +257,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 2,
 		"awayTeamGoals": 2,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Napoli-SC"
 		},
@@ -271,7 +271,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 9,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Flamengo"
 		},
@@ -285,7 +285,7 @@ export const matches = [
 		"homeTeamGoals": 3,
 		"awayTeam": 13,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Ferroviária"
 		},
@@ -299,7 +299,7 @@ export const matches = [
 		"homeTeamGoals": 3,
 		"awayTeam": 3,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Corinthians"
 		},
@@ -313,7 +313,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 16,
 		"awayTeamGoals": 3,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "São José-SP"
 		},
@@ -327,7 +327,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 14,
 		"awayTeamGoals": 2,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Minas Brasília"
 		},
@@ -341,7 +341,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 6,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Bahia"
 		},
@@ -355,7 +355,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 1,
 		"awayTeamGoals": 0,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Real Brasília"
 		},
@@ -369,7 +369,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 15,
 		"awayTeamGoals": 2,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Cruzeiro"
 		},
@@ -383,7 +383,7 @@ export const matches = [
 		"homeTeamGoals": 3,
 		"awayTeam": 7,
 		"awayTeamGoals": 0,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "São Paulo"
 		},
@@ -397,7 +397,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 4,
 		"awayTeamGoals": 4,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Internacional"
 		},
@@ -411,7 +411,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 12,
 		"awayTeamGoals": 4,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Botafogo"
 		},
@@ -425,7 +425,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 10,
 		"awayTeamGoals": 0,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Grêmio"
 		},
@@ -439,7 +439,7 @@ export const matches = [
 		"homeTeamGoals": 5,
 		"awayTeam": 11,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Santos"
 		},
@@ -453,7 +453,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 16,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Avaí/Kindermann"
 		},
@@ -467,7 +467,7 @@ export const matches = [
 		"homeTeamGoals": 3,
 		"awayTeam": 6,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Internacional"
 		},
@@ -481,7 +481,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 5,
 		"awayTeamGoals": 3,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Minas Brasília"
 		},
@@ -495,7 +495,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 7,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Bahia"
 		},
@@ -509,7 +509,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 13,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "São José-SP"
 		},
@@ -523,7 +523,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 4,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Santos"
 		},
@@ -537,7 +537,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 11,
 		"awayTeamGoals": 0,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Botafogo"
 		},
@@ -551,7 +551,7 @@ export const matches = [
 		"homeTeamGoals": 4,
 		"awayTeam": 8,
 		"awayTeamGoals": 1,
-		"inProgress": 0,
+		"inProgress": false,
 		"teamHome": {
 			"teamName": "Palmeiras"
 		},
@@ -565,7 +565,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 9,
 		"awayTeamGoals": 0,
-		"inProgress": 1,
+		"inProgress": true,
 		"teamHome": {
 			"teamName": "São Paulo"
 		},
@@ -579,7 +579,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 1,
 		"awayTeamGoals": 0,
-		"inProgress": 1,
+		"inProgress": true,
 		"teamHome": {
 			"teamName": "Ferroviária"
 		},
@@ -593,7 +593,7 @@ export const matches = [
 		"homeTeamGoals": 0,
 		"awayTeam": 10,
 		"awayTeamGoals": 0,
-		"inProgress": 1,
+		"inProgress": true,
 		"teamHome": {
 			"teamName": "Napoli-SC"
 		},
@@ -607,7 +607,7 @@ export const matches = [
 		"homeTeamGoals": 2,
 		"awayTeam": 15,
 		"awayTeamGoals": 2,
-		"inProgress": 1,
+		"inProgress": true,
 		"teamHome": {
 			"teamName": "Flamengo"
 		},
@@ -621,7 +621,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 3,
 		"awayTeamGoals": 1,
-		"inProgress": 1,
+		"inProgress": true,
 		"teamHome": {
 			"teamName": "Cruzeiro"
 		},
@@ -635,7 +635,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 12,
 		"awayTeamGoals": 1,
-		"inProgress": 1,
+		"inProgress": true,
 		"teamHome": {
 			"teamName": "Corinthians"
 		},
@@ -649,7 +649,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 14,
 		"awayTeamGoals": 2,
-		"inProgress": 1,
+		"inProgress": true,
 		"teamHome": {
 			"teamName": "Grêmio"
 		},
@@ -663,7 +663,7 @@ export const matches = [
 		"homeTeamGoals": 1,
 		"awayTeam": 2,
 		"awayTeamGoals": 1,
-		"inProgress": 1,
+		"inProgress": true,
 		"teamHome": {
 			"teamName": "Real Brasília"
 		},
