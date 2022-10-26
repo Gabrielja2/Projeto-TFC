@@ -4,12 +4,12 @@ import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 import { app } from '../app';
 import { Response } from 'superagent';
-import { matches } from './mocks/matchMock';
+import { matches, matchesInProgress } from './mocks/matchMock';
 
 chai.use(chaiHttp);
 const { expect } = chai;
 
-describe('Testando a rota /teams', () => {
+describe('Testando a rota /matches', () => {
   beforeEach(sinon.restore);
 
   it('Verifica se retorna todas as partidas corretamente e o status correto', async() => {
@@ -19,6 +19,15 @@ describe('Testando a rota /teams', () => {
 
     expect(response.status).to.be.equal(200);
     expect(response.body).to.be.deep.equal(matches);
+  })
+
+  it('Verifica se retorna todas as partidas inProgress corretamente e o status correto', async() => {
+    const response = await chai
+      .request(app)
+      .get('/matches?inProgress=true');
+
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.be.deep.equal(matchesInProgress);
   })
  
 });
