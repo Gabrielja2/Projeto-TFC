@@ -1,3 +1,4 @@
+import CustomError from '../helpers/customError';
 import { ICreateMatch } from '../interfaces/match';
 import MatcheModel from '../database/models/Matche';
 import TeamModel from '../database/models/Team';
@@ -28,6 +29,13 @@ export default class MatchService {
 
   public createMatch = async (body : ICreateMatch) => {
     const newMatch = await MatcheModel.create({ ...body, inProgress: true });
+
+    const matchByAwayTeamId = await MatcheModel.findByPk(body.awayTeam);
+    const matchByHomeTeamId = await MatcheModel.findByPk(body.homeTeam);
+
+    if (!matchByAwayTeamId || !matchByHomeTeamId) {
+      throw new CustomError(404, 'There is no team with such id!');
+    }
 
     return newMatch;
   };
