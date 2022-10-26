@@ -1,6 +1,7 @@
 import { verify, sign, JwtPayload } from 'jsonwebtoken';
 import dotenv = require('dotenv');
 import { IUser } from '../interfaces/user';
+import CustomError from './customError';
 
 dotenv.config();
 
@@ -15,9 +16,13 @@ const generateToken = async (payload: IUser) => {
 };
 
 export const decodeToken = (token: string) => {
-  const decodedtoken = verify(token, 'jwt_secret') as JwtPayload;
+  try {
+    const decodedtoken = verify(token, 'jwt_secret') as JwtPayload;
 
-  return decodedtoken;
+    return decodedtoken;
+  } catch (error) {
+    throw new CustomError(401, 'Token must be a valid token');
+  }
 };
 
 export default generateToken;
