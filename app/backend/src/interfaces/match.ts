@@ -4,3 +4,7 @@ export interface ICreateMatch {
   homeTeamGoals: number,
   awayTeamGoals: number,
 }
+
+export interface IMatch extends ICreateMatch {
+  'inProgress': true,
+}

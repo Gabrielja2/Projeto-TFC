@@ -31,4 +31,10 @@ export default class MatchService {
 
     return newMatch;
   };
+
+  public updateMatch = async (id : string) => {
+    const matchToUpdate = await MatcheModel.update({ inProgress: false }, { where: { id } });
+
+    return matchToUpdate;
+  };
 }
