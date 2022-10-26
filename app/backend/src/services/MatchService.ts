@@ -1,3 +1,4 @@
+import { ICreateMatch } from '../interfaces/match';
 import MatcheModel from '../database/models/Matche';
 import TeamModel from '../database/models/Team';
 
@@ -23,5 +24,11 @@ export default class MatchService {
       ],
     });
     return matchesInProgress;
+  };
+
+  public createMatch = async (body : ICreateMatch) => {
+    const newMatch = await MatcheModel.create({ ...body, inProgress: true });
+
+    return newMatch;
   };
 }

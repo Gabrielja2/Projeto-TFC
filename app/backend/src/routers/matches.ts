@@ -8,5 +8,6 @@ const matchService = new MatchService();
 const matchController = new MatchController(matchService);
 
 matchesRouter.get('/', matchController.getMatches);
+matchesRouter.post('/', matchController.createMatches);
 
 export default matchesRouter;
