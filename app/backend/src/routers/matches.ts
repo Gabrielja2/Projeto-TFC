@@ -11,6 +11,7 @@ const matchController = new MatchController(matchService);
 
 matchesRouter.get('/', matchController.getMatches);
 matchesRouter.post('/', tokenMiddleware, matchMiddleware, matchController.createMatch);
-matchesRouter.patch('/:id/finish', matchController.updateMatch);
+matchesRouter.patch('/:id', matchController.updateMatch);
+matchesRouter.patch('/:id/finish', matchController.finishMatch);
 
 export default matchesRouter;

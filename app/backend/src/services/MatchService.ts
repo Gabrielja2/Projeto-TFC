@@ -1,5 +1,5 @@
 import CustomError from '../helpers/customError';
-import { ICreateMatch } from '../interfaces/match';
+import { ICreateMatch, IUpdateGoals } from '../interfaces/match';
 import MatcheModel from '../database/models/Matche';
 import TeamModel from '../database/models/Team';
 
@@ -40,7 +40,15 @@ export default class MatchService {
     return newMatch;
   };
 
-  public updateMatch = async (id : string) => {
+  public updateMatch = async (id: string, body: IUpdateGoals) => {
+    const { homeTeamGoals, awayTeamGoals } = body;
+    await MatcheModel.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
+
+    const updated = await MatcheModel.findOne({ where: { id } });
+    return updated;
+  };
+
+  public finishMatch = async (id : string) => {
     const matchToUpdate = await MatcheModel.update({ inProgress: false }, { where: { id } });
 
     return matchToUpdate;

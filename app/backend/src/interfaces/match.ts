@@ -6,5 +6,9 @@ export interface ICreateMatch {
 }
 
 export interface IMatch extends ICreateMatch {
-  'inProgress': true,
+  inProgress: true,
+}
+export interface IUpdateGoals {
+  homeTeamGoals: number,
+  awayTeamGoals: number
 }
