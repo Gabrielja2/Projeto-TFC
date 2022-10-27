@@ -787,3 +787,53 @@ export const matchesInProgress = [
 		}
 	}
 ]
+
+export const newMatchMock = {
+	"homeTeam": 16,
+	"awayTeam": 8, 
+	"homeTeamGoals": 2,
+	"awayTeamGoals": 2
+}
+
+export const newMatchSameIdMock = {
+	"homeTeam": 8,
+	"awayTeam": 8, 
+	"homeTeamGoals": 2,
+	"awayTeamGoals": 2
+}
+
+export const createdMatchMock = {
+	"id": 49,
+	"homeTeam": 16,
+	"awayTeam": 8,
+	"homeTeamGoals": 2,
+	"awayTeamGoals": 2,
+	"inProgress": true
+}
+
+export const newMatchWrongMock = {
+	"homeTeam": 1621,
+	"awayTeam": 8, 
+	"homeTeamGoals": 2,
+	"awayTeamGoals": 2
+}
+
+export const goalsBodyMock = {
+	"homeTeamGoals": 2,
+	"awayTeamGoals": 2
+}
+
+export const editedGoalsMock = {
+	"id": 1,
+	"homeTeam": 16,
+	"homeTeamGoals": 2,
+	"awayTeam": 8,
+	"awayTeamGoals": 2,
+	"inProgress": false
+}
+
+export const finishedMatchMock = {
+	"message": "Finished"
+}
+
+export const tokenMock = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoyLCJlbWFpbCI6InVzZXJAdXNlci5jb20iLCJ1c2VybmFtZSI6IlVzZXIiLCJwYXNzd29yZCI6IiQyYSQwOCRZOEFiaThqWHZzWHlxbS5ybXAwQi51UUJBNXFVejdUNkdobGcvQ3ZWci9nTHhZajVVQVpWTyIsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTY2NjgxODMwNiwiZXhwIjoxNjY4MTE0MzA2fQ.PVeJl50oSifCQ-B-AhKfi_1RzX-7Iuxl-j58JrxWfr0`

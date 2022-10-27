@@ -37,6 +37,10 @@ export default class MatchService {
       throw new CustomError(404, 'There is no team with such id!');
     }
 
+    if (body.homeTeam === body.awayTeam) {
+      throw new CustomError(422, 'It is not possible to create a match with two equal teams');
+    }
+
     return newMatch;
   };
 
