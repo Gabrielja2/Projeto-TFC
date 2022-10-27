@@ -2,8 +2,8 @@ const leaderboardQuery = `SELECT
 t.team_name as 'name',
 SUM(CASE
 WHEN m.home_team_goals > m.away_team_goals THEN 3
-WHEN m.home_team_goals < m.away_team_goals THEN 0
-ELSE 1 END) as 'totalPoints',
+WHEN m.home_team_goals = m.away_team_goals THEN 1
+ELSE 0 END) as 'totalPoints',
 COUNT(t.id) as 'totalGames',
 SUM(CASE
 WHEN m.home_team_goals > m.away_team_goals THEN 1
@@ -17,7 +17,7 @@ ELSE 0 END) as 'totalLosses',
 SUM(m.home_team_goals) as 'goalsFavor',
 SUM(m.away_team_goals) as 'goalsOwn',
 SUM(m.home_team_goals) - SUM(m.away_team_goals) as 'goalsBalance',
-FORMAT((SUM(CASE
+ROUND((SUM(CASE
 WHEN m.home_team_goals > m.away_team_goals THEN 3
 WHEN m.home_team_goals < m.away_team_goals THEN 0
 ELSE 1 END) / (COUNT(t.id) * 3)) * 100, 2) as 'efficiency'
