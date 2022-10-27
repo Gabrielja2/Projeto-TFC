@@ -1,12 +1,14 @@
 import * as sinon from 'sinon';
 import * as chai from 'chai';
+import * as jwt from 'jsonwebtoken';
 // @ts-ignore
 import chaiHttp = require('chai-http');
 import { app } from '../app';
 import { Response } from 'superagent';
-import { createdMatchMock, editedGoalsMock, finishedMatchMock, goalsBodyMock, matches, matchesInProgress, newMatchMock, tokenMock } from './mocks/matchMock';
+import { createdMatchMock, editedGoalsMock, finishedMatchMock, goalsBodyMock, invalidTokenMock, matches, matchesInProgress, newMatchMock, newMatchSameIdMock, newMatchWrongMock, tokenMock } from './mocks/matchMock';
 import MatchesModel from '../database/models/Matche';
-import { IMatch } from '../interfaces/match';
+import TeamModel from '../database/models/Team';
+
 
 chai.use(chaiHttp);
 const { expect } = chai;
@@ -37,48 +39,43 @@ describe('Testando a rota /matches', () => {
     expect(response.body).to.be.deep.equal(matchesInProgress);
   })  
 
-  // it('Verifica se é possível criar uma partida corretamente e retorna o status correto', async() => {
-  //   sinon.stub(MatchesModel, 'create').resolves(createdMatchMock as any)  
-  //   const response = await chai
-  //     .request(app)
-  //     .post('/matches')
-  //     .send(newMatchMock);      
-
-  //   expect(response.status).to.be.equal(201);
-  //   expect(response.body).to.be.deep.equal(createdMatchMock);
-  // })
-
-  // it('Verifica se não é possível criar uma partida com times com o mesmo id', async() => {
-  //   sinon.stub(MatchesModel, 'create').resolves({"message": "It is not possible to create a match with two equal teams"} as any)  
-  //   const response = await chai
-  //     .request(app)
-  //     .post('/matches')
-  //     .send(newMatchSameIdMock);
-
-  //   expect(response.status).to.be.equal(422);
-  //   expect(response.body).to.be.deep.equal({"message": "It is not possible to create a match with two equal teams"});
-  // })
-
-    // it('Verifica se não é possível criar uma partida com times com id inextitente no banco de dados', async() => {
-  //   sinon.stub(MatchesModel, 'create').resolves({"message": "It is not possible to create a match with two equal teams"} as any)  
-  //   const response = await chai
-  //     .request(app)
-  //     .post('/matches')
-  //     .send(newMatchWrongMock);
-
-  //   expect(response.status).to.be.equal(404);
-  //   expect(response.body).to.be.deep.equal({"message": "There is no team with such id!"});
-  // })
-
-  it('Verifica se não é possível criar uma partida sem um token válido', async() => {
-    sinon.stub(MatchesModel, 'create').resolves({"message": "Token must be a valid token"} as any)  
+  it('Verifica se é possível criar uma partida corretamente e retorna o status correto', async() => {
+    sinon.stub(MatchesModel, 'create').resolves(createdMatchMock as any)  
+    sinon.stub(jwt, 'verify').resolves(true);
     const response = await chai
       .request(app)
       .post('/matches')
-      .send(newMatchMock);
+      .send(newMatchMock)
+      .set('authorization', tokenMock);    
 
-    expect(response.status).to.be.equal(401);
-    expect(response.body).to.be.deep.equal({"message": "Token must be a valid token"});
+    expect(response.status).to.be.equal(201);
+    expect(response.body).to.be.deep.equal(createdMatchMock);
+  })
+
+  it('Verifica se não é possível criar uma partida com times com o mesmo id', async() => {
+    sinon.stub(jwt, 'verify').resolves(true);
+
+    const response = await chai
+      .request(app)
+      .post('/matches')
+      .send(newMatchSameIdMock)
+      .set('authorization', tokenMock);
+
+    expect(response.status).to.be.equal(422);
+    expect(response.body).to.be.deep.equal({"message": "It is not possible to create a match with two equal teams"});
+  })
+
+    it('Verifica se não é possível criar uma partida com times com id inextitente no banco de dados', async() => {
+    sinon.stub(jwt, 'verify').resolves(true);
+    sinon.stub(TeamModel, 'findOne').resolves(null);
+    const response = await chai
+      .request(app)
+      .post('/matches')
+      .send(newMatchWrongMock)
+      .set('authorization', tokenMock);
+
+    expect(response.status).to.be.equal(404);
+    expect(response.body).to.be.deep.equal({"message": "There is no team with such id!"});
   })
 
   it('Verifica se é possivel atualizar uma partida corretamente e retorna o status correto', async() => {
@@ -98,6 +95,18 @@ describe('Testando a rota /matches', () => {
 
     expect(response.status).to.be.equal(200);
     expect(response.body).to.be.deep.equal(finishedMatchMock);
+  })
+
+  it('Verifica se retorna a mensagem correta e o status correto caso seja um token invalido', async() => {
+    sinon.stub(jwt, 'verify').throws();
+    const response = await chai
+      .request(app)
+      .post('/matches')
+      .send(newMatchMock)
+      .set('authorization', invalidTokenMock);
+
+    expect(response.status).to.be.equal(401);
+    expect(response.body).to.be.deep.equal({"message": "Token must be a valid token"});
   })
  
 });

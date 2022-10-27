@@ -837,3 +837,5 @@ export const finishedMatchMock = {
 }
 
 export const tokenMock = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoyLCJlbWFpbCI6InVzZXJAdXNlci5jb20iLCJ1c2VybmFtZSI6IlVzZXIiLCJwYXNzd29yZCI6IiQyYSQwOCRZOEFiaThqWHZzWHlxbS5ybXAwQi51UUJBNXFVejdUNkdobGcvQ3ZWci9nTHhZajVVQVpWTyIsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTY2NjgxODMwNiwiZXhwIjoxNjY4MTE0MzA2fQ.PVeJl50oSifCQ-B-AhKfi_1RzX-7Iuxl-j58JrxWfr0`
+
+export const invalidTokenMock = 'esse deu ruim';
