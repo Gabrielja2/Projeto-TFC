@@ -16,8 +16,7 @@ describe('Testando a rota /login', () => {
 
   it('Verifica se retorna um token em caso de sucesso no login', async() => {
     const token = await generateToken(userMock)    
-    const { payload } = decodeToken(token)
-    console.log('decoded token: ', payload);
+    const { payload } = decodeToken(token)    
     const response = await chai.request(app).post('/login').send(correctMock)
 
     expect(response.status).to.be.equal(200);
