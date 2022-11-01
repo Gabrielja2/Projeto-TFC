@@ -1,0 +1,1 @@
+{"version":3,"file":"middlewareToken.js","sourceRoot":"","sources":["../../src/middlewares/middlewareToken.ts"],"names":[],"mappings":";;AACA,4DAAuD;AAEvD,SAAS,eAAe,CAAC,GAAY,EAAE,GAAa,EAAE,IAAkB;IACtE,MAAM,EAAE,aAAa,EAAE,GAAG,GAAG,CAAC,OAAO,CAAC;IACtC,IAAA,2BAAW,EAAC,aAAuB,CAAC,CAAC;IAErC,IAAI,EAAE,CAAC;AACT,CAAC;AAED,kBAAe,eAAe,CAAC"}
