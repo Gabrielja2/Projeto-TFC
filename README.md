@@ -14,7 +14,7 @@
     * Para adicionar uma partida é necessário ter um _token_, portanto a pessoa deverá estar logada para fazer as alterações. Teremos um relacionamento entre as tabelas `teams` e `matches` para fazer as atualizações das partidas.
 
 <details>   
-   <summary><strong> Estrutura do projeto<summary></strong><br />
+   <summary><strong> Estrutura do projeto</summary></strong><br />
       
    O projeto é composto de 4 entidades importantes para sua estrutura:
 
