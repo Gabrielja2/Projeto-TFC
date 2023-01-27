@@ -4,7 +4,7 @@
 <strong>👨‍💻 O que foi desenvolvido</strong><br />    
     * Aqui você vai encontrar os detalhes de como foi estruturado este projeto e instruções para rodar.    
     * O `TFC` é um site informativo sobre partidas e classificações de futebol! ⚽️
-    * Desenvolvido cumprindo todas as regras de negócio** estabelecidas e **essa API é capaz de ser consumida por um front-end já provido nesse projeto**
+    * **Desenvolvido cumprindo todas as regras de negócio** estabelecidas e **essa API é capaz de ser consumida por um front-end já provido nesse projeto**
     * Essa API foi desenvolvida, utilizando o método `TDD` e também integrada *- através do docker-compose -*, as aplicações, para que elas funcionem consumindo um banco de dados. Foi desenvolvido **um back-end dockerizado utilizando modelagem de dados através do Sequelize**.  
 
 
