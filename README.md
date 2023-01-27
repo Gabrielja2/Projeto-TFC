@@ -1,7 +1,8 @@
 # Bem vindos ao repositório Trybe-Futebol-Club
 
 
-<strong>👨‍💻 O que foi desenvolvido</strong><br />    
+<strong>👨‍💻 O que foi desenvolvido</strong><br />
+
     * Aqui você vai encontrar os detalhes de como foi estruturado este projeto e instruções para rodar.
     
     * O `TFC` é um site informativo sobre partidas e classificações de futebol! ⚽️.
@@ -35,7 +36,7 @@ O projeto é composto de 4 entidades importantes para sua estrutura:
   - O `docker-compose` tem a responsabilidade de unir todos os serviços conteinerizados (backend, frontend e db) e subir o projeto completo com o comando `npm run compose:up` ou `npm run compose:up:dev`;
   - Os `Dockerfiles` estão já estão configurados corretamente nas raízes do `front-end` e `back-end`, para conseguir inicializar a aplicação;
 
- <details>
+ </details>
 
 # Orientações
 
