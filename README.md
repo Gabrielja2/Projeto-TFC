@@ -69,10 +69,14 @@ O projeto é composto de 4 entidades importantes para sua estrutura:
     1. Entre na pasta do repositório que você acabou de clonar ou fazer o download do arquivo zip:
     * `cd pasta-do-repositório`
 
-    2. Instale as dependências:
+    2. Instale as dependências através do terminal:
     *`npm install`
 
     3. Suba os imagens do servidor node e do banco de do docker-compose com o comando:
     *`docker-compose up -d`
+   
+    4. Dentro de app/frontend, suba a aplicação com o comando `npm start` através do terminal.
+   
+    5. Dentro de app/backend, suba a api com o comando `npm start` através do terminal.
     
 </details>
