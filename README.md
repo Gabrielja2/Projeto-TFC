@@ -9,6 +9,8 @@
     * **Desenvolvido cumprindo todas as regras de negócio** estabelecidas e **essa API é capaz de ser consumida por um front-end já provido nesse projeto**.
     
     * Essa API foi desenvolvida, utilizando o método `TDD` e também integrada *- através do docker-compose -*, as aplicações, para que elas funcionem consumindo um banco de dados. Foi desenvolvido **um back-end dockerizado utilizando modelagem de dados através do Sequelize**.
+    
+    * Para adicionar uma partida é necessário ter um _token_, portanto a pessoa deverá estar logada para fazer as alterações. Teremos um relacionamento entre as tabelas `teams` e `matches` para fazer as atualizações das partidas.
 
 
 # Orientações
