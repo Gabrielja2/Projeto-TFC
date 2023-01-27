@@ -12,7 +12,9 @@
     
     * Para adicionar uma partida é necessário ter um _token_, portanto a pessoa deverá estar logada para fazer as alterações. Teremos um relacionamento entre as tabelas `teams` e `matches` para fazer as atualizações das partidas.
 
-<strong> Estrutura do projeto</strong><br />
+<details>
+   
+<summary><strong> Estrutura do projeto<summary></strong><br />
 O projeto é composto de 4 entidades importantes para sua estrutura:
 
 1️⃣ **Banco de dados:**
@@ -33,6 +35,7 @@ O projeto é composto de 4 entidades importantes para sua estrutura:
   - O `docker-compose` tem a responsabilidade de unir todos os serviços conteinerizados (backend, frontend e db) e subir o projeto completo com o comando `npm run compose:up` ou `npm run compose:up:dev`;
   - Os `Dockerfiles` estão já estão configurados corretamente nas raízes do `front-end` e `back-end`, para conseguir inicializar a aplicação;
 
+ <details>
 
 # Orientações
 
